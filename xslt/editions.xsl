@@ -160,6 +160,43 @@
              <xsl:apply-templates/>
         </br>
 </xsl:template>
+<!-- templates für: notation (nur @rend verwenden), rubrik/rubrik2, initiale_lombarde, initale_cadelle-->
+<xsl:template match="tei:ab[@type='notation']">
+    <xsl:variable select="./@class" name="currentclass" />
+    <xsl:variable name="pbId"><xsl:value-of select="replace(data(@facs), '#', '')"/></xsl:variable>
+    <div>
+        <xsl:attribute name="class">
+            <xsl:value-of select="$currentclass" />
+        </xsl:attribute>
+        <xsl:value-of select="@rend"/>
+        <xsl:apply-templates/>
+    </div>
+</xsl:template>
+<!-- 
+<xsl:template match="tei:ab[@type='rubrik']">
+    <xsl:attribute name="class">
+        <xsl:value-of select="$currentclass" />
+    </xsl:attribute>
+</xsl:template>
+
+<xsl:template match="tei:ab[@type='rubrik2']">
+    <xsl:attribute name="class">
+        <xsl:value-of select="$currentclass" />
+    </xsl:attribute>
+</xsl:template>
+
+<xsl:template match="tei:ab[@type='initiale_cadelle']">
+    <xsl:attribute name="class">
+        <xsl:value-of select="$currentclass" />
+    </xsl:attribute>
+</xsl:template>
+
+<xsl:template match="tei:ab[@type='initiale_lombarde']">
+    <xsl:attribute name="class">
+        <xsl:value-of select="$currentclass" />
+    </xsl:attribute>
+</xsl:template> -->
+
    <!-- <xsl:template match="tei:rs">
         <xsl:variable name="ppid">
             <xsl:value-of select="./@ref"/>
