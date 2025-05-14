@@ -101,12 +101,12 @@
                             <div id="container-resize" class="row transcript active">
                                 <div id="text-resize" class="col-md-4 col-lg-4 col-sm-1 text" >
                                 </div>
-                                <div id="img-resize" class="col-md-4 col-lg-4 col-sm-12 facsimiles" >   <!-- OSD container (facsimiles).  Maybe 6 (1/2 of the total)-->
+                                <div id="img-resize" class="col-md-6 col-lg-6 col-sm-12 facsimiles" >   <!-- OSD container (facsimiles).  Maybe 6 (1/2 of the total)-->
                                     <div id="viewer">
                                         <div id="container_facs_1" class="osd-container"/>
                                     </div>
                                 </div>
-                                <div id="text-resize" lang="de" class="col-md-4 col-lg-4 col-sm-11 text yes-index"> <!--- Maybe 6 (1/2 of the total) -->
+                                <div id="text-resize" lang="de" class="col-md-6 col-lg-6 col-sm-11 text yes-index"> <!--- Maybe 6 (1/2 of the total) -->
                                     <div id="transcript">
                                         <xsl:apply-templates/> <!-- Text transcription -->
                                     </div>
@@ -167,35 +167,42 @@
     <div>
         <xsl:attribute name="class">
             <xsl:value-of select="$currentclass" />
+            <xsl:text>yes-index</xsl:text>
         </xsl:attribute>
         <xsl:value-of select="@rend"/>
         <xsl:apply-templates/>
     </div>
 </xsl:template>
-<!-- 
+
 <xsl:template match="tei:ab[@type='rubrik']">
     <xsl:attribute name="class">
         <xsl:value-of select="$currentclass" />
+        <xsl:text>yes-index</xsl:text>
     </xsl:attribute>
 </xsl:template>
 
 <xsl:template match="tei:ab[@type='rubrik2']">
     <xsl:attribute name="class">
         <xsl:value-of select="$currentclass" />
+        <xsl:text>yes-index</xsl:text>
     </xsl:attribute>
 </xsl:template>
 
 <xsl:template match="tei:ab[@type='initiale_cadelle']">
     <xsl:attribute name="class">
         <xsl:value-of select="$currentclass" />
+        <xsl:text>yes-index</xsl:text>
     </xsl:attribute>
 </xsl:template>
 
 <xsl:template match="tei:ab[@type='initiale_lombarde']">
     <xsl:attribute name="class">
         <xsl:value-of select="$currentclass" />
+        <xsl:text>yes-index</xsl:text>
     </xsl:attribute>
-</xsl:template> -->
+</xsl:template> 
+
+
 
    <!-- <xsl:template match="tei:rs">
         <xsl:variable name="ppid">
